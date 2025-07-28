@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Pesan Terkirim</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -16,19 +16,48 @@
         background: linear-gradient(135deg, #000000 0%, #3c1c81 100%);
       }
     </style>
+    <style>
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease-out;
+      }
+      .fade-in-up.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
   </head>
-  <body class="gradient-bg min-h-screen flex items-center justify-center text-white px-4">
-    <div class="text-center max-w-md">
+  <body
+    class="gradient-bg min-h-screen flex items-center justify-center text-white px-4"
+  >
+    <div class="text-center max-w-md fade-in-up">
       <h1 class="text-4xl font-bold mb-4 text-purple-400">Terima Kasih! 🙌</h1>
       <p class="text-lg mb-8 text-gray-300">
-        Pesan kamu telah berhasil dikirim. Aku akan segera menghubungimu secepatnya.
+        Pesan kamu telah berhasil dikirim. Aku akan segera menghubungimu
+        secepatnya.
       </p>
       <a
-        href="index.html"
         class="inline-block bg-[#111111] text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition duration-300"
+        href="index.html"
       >
         Kembali ke Beranda
       </a>
     </div>
+    <script>
+      const revealItems = document.querySelectorAll(".fade-in-up");
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      revealItems.forEach((item) => revealObserver.observe(item));
+    </script>
   </body>
 </html>

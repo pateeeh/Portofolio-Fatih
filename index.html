@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Fatih Azzam - Junior Mobile Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -66,6 +66,56 @@
       src="https://kit.fontawesome.com/a076d05399.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Typewriter Effect -->
+    <style>
+      .typewriter > .text {
+        display: inline-block;
+        overflow: hidden;
+        border-right: 2px solid #fff;
+        white-space: nowrap;
+        animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #fff;
+        }
+      }
+
+      .glow-hover:hover {
+        box-shadow: 0 0 10px rgba(99, 102, 241, 0.7),
+          0 0 20px rgba(99, 102, 241, 0.5);
+        transform: scale(1.05);
+        transition: all 0.3s ease-in-out;
+      }
+
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease-out;
+      }
+
+      .fade-in-up.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
   </head>
   <body class="bg-black">
     <!-- Navigation -->
@@ -75,125 +125,141 @@
           <div class="text-xl font-bold text-white">Fatih Azzam</div>
           <div class="hidden md:flex space-x-8">
             <a
+              class="text-gray-400 hover:text-blue-600 transition duration-300"
               href="#home"
-              class="text-gray-400 hover:text-blue-600 transition duration-300"
-              >Home</a
             >
+              Home
+            </a>
             <a
+              class="text-gray-400 hover:text-blue-600 transition duration-300"
               href="#about"
-              class="text-gray-400 hover:text-blue-600 transition duration-300"
-              >About</a
             >
+              About
+            </a>
             <a
+              class="text-gray-400 hover:text-blue-600 transition duration-300"
               href="#projects"
-              class="text-gray-400 hover:text-blue-600 transition duration-300"
-              >Projects</a
             >
+              Projects
+            </a>
             <a
+              class="text-gray-400 hover:text-blue-600 transition duration-300"
               href="#skills"
-              class="text-gray-400 hover:text-blue-600 transition duration-300"
-              >Skills</a
             >
+              Skills
+            </a>
             <a
-              href="#contact"
               class="text-gray-400 hover:text-blue-600 transition duration-300"
-              >Contact</a
+              href="#contact"
             >
+              Contact
+            </a>
           </div>
-          <button id="mobile-menu-btn" class="md:hidden">
+          <button class="md:hidden text-white" id="mobile-menu-btn">
             <svg
               class="w-6 h-6"
               fill="none"
               stroke="currentColor"
-              viewBox="0 0 24 24"
+              viewbox="0 0 24 24"
             >
               <path
+                d="M4 6h16M4 12h16M4 18h16"
+                id="hamburger-path"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
               ></path>
             </svg>
           </button>
         </div>
       </div>
-      <div id="mobile-menu" class="md:hidden hidden bg-[#111111] border-t">
-        <a href="#home" class="block px-4 py-2 text-gray-400 hover:bg-gray-100"
-          >Home</a
-        >
-        <a href="#about" class="block px-4 py-2 text-gray-400 hover:bg-gray-100"
-          >About</a
-        >
+      <div class="md:hidden hidden bg-[#111111] border-t" id="mobile-menu">
+        <a class="block px-4 py-2 text-gray-400 hover:bg-gray-100" href="#home">
+          Home
+        </a>
         <a
+          class="block px-4 py-2 text-gray-400 hover:bg-gray-100"
+          href="#about"
+        >
+          About
+        </a>
+        <a
+          class="block px-4 py-2 text-gray-400 hover:bg-gray-100"
           href="#projects"
-          class="block px-4 py-2 text-gray-400 hover:bg-gray-100"
-          >Projects</a
         >
+          Projects
+        </a>
         <a
+          class="block px-4 py-2 text-gray-400 hover:bg-gray-100"
           href="#skills"
-          class="block px-4 py-2 text-gray-400 hover:bg-gray-100"
-          >Skills</a
         >
+          Skills
+        </a>
         <a
-          href="#contact"
           class="block px-4 py-2 text-gray-400 hover:bg-gray-100"
-          >Contact</a
+          href="#contact"
         >
+          Contact
+        </a>
       </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="gradient-bg min-h-screen flex items-center pt-16">
+    <section class="gradient-bg min-h-screen flex items-center pt-16" id="home">
       <div class="max-w-6xl mx-auto px-4 text-center text-white">
         <div class="animate-fade-in">
           <div
             class="w-48 h-48 rounded-full mx-auto mb-8 relative shadow-xl ring-4 ring-purple-600 overflow-hidden"
           >
             <img
-              src="assets/icons/profile.jpeg"
               alt="Fatih Azzam"
               class="w-full h-full object-cover"
+              src="assets/icons/profile.jpeg"
             />
           </div>
           <h1 class="text-5xl md:text-5xl font-bold mb-4 text-white">
-            I am <span class="text-purple-500">Fatih Azzam</span>
+            I am
+            <span class="text-purple-500"> Fatih Azzam </span>
           </h1>
-          <h2 class="text-md uppercase text-purple-300 mt-2 mb-2">
-            Junior Mobile Developer
+          <h2 class="text-md uppercase text-purple-300 mt-2 mb-2 typewriter">
+            <span id="typed-text"> </span>
+            <span class="blinking-cursor">|</span>
           </h2>
+
           <p class="text-xl mb-8 max-w-2xl mx-auto">
             Driven mobile developer passionate about building smooth,
-            user-friendly Android experiences with Flutter and Kotlin.
+            user-friendly Android experiences with Kotlin and Flutter.
           </p>
           <div class="space-x-4">
             <a
+              class="bg-[#111111] text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 animate-bounce"
               href="#projects"
-              class="bg-[#111111] text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300"
-              >View My Work</a
             >
+              View My Work
+            </a>
             <a
-              href="#contact"
               class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-[#111111] hover:text-blue-600 transition duration-300"
-              >Contact Me</a
+              href="#contact"
             >
+              Contact Me
+            </a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-[#111111]">
+    <section class="py-20 bg-[#111111]" id="about">
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-white mb-4">About Me</h2>
           <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
         </div>
         <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div class="fade-in-up">
             <h3 class="text-2xl font-semibold mb-6 text-white">
               Hello! I'm Fatih
             </h3>
-
             <p class="text-gray-400 mb-6 leading-relaxed">
               Saya adalah junior mobile developer yang passionate dalam
               menciptakan aplikasi mobile yang user-friendly dan inovatif.
@@ -201,7 +267,6 @@
               development, saya selalu antusias untuk belajar teknologi baru dan
               menghadapi tantangan dalam pengembangan aplikasi.
             </p>
-
             <p class="text-gray-400 mb-6 leading-relaxed">
               Saya percaya bahwa aplikasi mobile yang baik tidak hanya tentang
               kode yang bersih, tetapi juga tentang pengalaman pengguna yang
@@ -213,37 +278,41 @@
             <div class="flex flex-wrap gap-4 mb-6">
               <span
                 class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >Flutter</span
               >
+                Flutter
+              </span>
               <span
                 class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm"
-                >Kotlin</span
               >
+                Kotlin
+              </span>
               <span
                 class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm"
-                >Dart</span
               >
+                Java
+              </span>
               <span
                 class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm"
-                >Android</span
               >
+                Android
+              </span>
             </div>
 
             <!-- Tombol Download CV -->
             <div class="mt-6">
               <a
+                class="bg-purple-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-600 transition duration-300 flex items-center space-x-2 w-max"
+                download=""
                 href="assets/CV_Muhammad_Fatih_Azzam.pdf"
-                download
-                class="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition duration-300 flex items-center space-x-2 w-max"
               >
-                <span>📄</span>
-                <span>Download CV</span>
+                <span> 📄 </span>
+                <span> Download CV </span>
               </a>
             </div>
           </div>
 
           <!-- Bagian Kanan -->
-          <div class="text-center">
+          <div class="text-center fade-in-up">
             <div
               class="w-80 h-80 rounded-full mx-auto bg-cover bg-center shadow-2xl"
               style="background-image: url('assets/icons/profile.jpeg')"
@@ -254,7 +323,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-black">
+    <section class="py-20 bg-black" id="projects">
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-white mb-4">My Projects</h2>
@@ -263,11 +332,10 @@
             Beberapa project mobile app yang telah saya kerjakan
           </p>
         </div>
-
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Project 1 -->
           <div
-            class="bg-[#111111] rounded-lg shadow-lg overflow-hidden card-hover"
+            class="bg-[#111111] rounded-lg shadow-lg overflow-hidden card-hover fade-in-up"
           >
             <div class="p-6">
               <div
@@ -277,9 +345,9 @@
                   class="w-full h-full overflow-hidden rounded-[1.5rem] bg-black"
                 >
                   <img
-                    src="assets/todotoday.jpg"
                     alt="ToDoToday"
                     class="object-cover w-full h-full rounded-[1rem] border border-gray-300"
+                    src="assets/todotoday.jpg"
                   />
                 </div>
               </div>
@@ -292,23 +360,25 @@
               <div class="flex flex-wrap gap-2 mb-2">
                 <span
                   class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs"
-                  >Kotlin</span
                 >
+                  Kotlin
+                </span>
                 <span
                   class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs"
-                  >Xml-RPC</span
                 >
+                  Xml-RPC
+                </span>
                 <span
                   class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs"
-                  >Odoo</span
                 >
+                  Odoo
+                </span>
               </div>
             </div>
           </div>
-
           <!-- Project 2 -->
           <div
-            class="bg-[#111111] rounded-lg shadow-lg overflow-hidden card-hover"
+            class="bg-[#111111] rounded-lg shadow-lg overflow-hidden card-hover fade-in-up"
           >
             <div class="p-6">
               <div
@@ -318,9 +388,9 @@
                   class="w-full h-full overflow-hidden rounded-[1.5rem] bg-black"
                 >
                   <img
-                    src="assets/medibook.jpg"
                     alt="Medibook"
                     class="object-cover w-full h-full rounded-[1rem] border border-gray-300"
+                    src="assets/medibook.jpg"
                   />
                 </div>
               </div>
@@ -332,23 +402,25 @@
               <div class="flex flex-wrap gap-2 mb-2">
                 <span
                   class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs"
-                  >Kotlin</span
                 >
+                  Kotlin
+                </span>
                 <span
                   class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs"
-                  >Retrofit</span
                 >
+                  Retrofit
+                </span>
                 <span
                   class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs"
-                  >Node.JS</span
                 >
+                  Node.JS
+                </span>
               </div>
             </div>
           </div>
-
           <!-- Project 3 -->
           <div
-            class="bg-[#111111] rounded-lg shadow-lg overflow-hidden card-hover"
+            class="bg-[#111111] rounded-lg shadow-lg overflow-hidden card-hover fade-in-up"
           >
             <div class="p-6">
               <div
@@ -358,25 +430,26 @@
                   class="w-full h-full overflow-hidden rounded-[1.5rem] bg-black"
                 >
                   <img
-                    src="assets/dompetku.jpg"
                     alt="DompetKu"
                     class="object-cover w-full h-full rounded-[1rem] border border-gray-300"
+                    src="assets/dompetku.jpg"
                   />
                 </div>
               </div>
               <h3 class="text-xl font-semibold mb-3 text-white">DompetKu</h3>
               <p class="text-gray-400 mb-4">
                 Aplikasi manajemen keuangan pribadi untuk mencatat, melacak, dan
-                menganalisis pemasukan serta pengeluaran harian Anda.
+                menganalisis pemasukan serta pengeluaran harian.
               </p>
               <div class="flex flex-wrap gap-2 mb-2">
                 <span
                   class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs"
-                  >Kotlin</span
                 >
-                <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs"
-                  >Room</span
-                >
+                  Kotlin
+                </span>
+                <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">
+                  Room
+                </span>
               </div>
             </div>
           </div>
@@ -385,7 +458,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-[#111111]">
+    <section class="py-20 bg-[#111111]" id="skills">
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-white mb-4">Technical Skills</h2>
@@ -393,79 +466,79 @@
         </div>
         <div class="grid md:grid-cols-2 gap-12">
           <!-- Programming Languages -->
-          <div>
+          <div class="fade-in-up">
             <h3 class="text-2xl font-semibold mb-8 text-white">
               Programming Languages
             </h3>
             <div class="grid grid-cols-2 gap-4">
               <!-- Kotlin -->
               <div
-                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition"
+                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition fade-in-up"
               >
                 <img
-                  src="assets/icons/kotlin.png"
                   alt="Kotlin"
                   class="w-8 h-8 mx-auto mb-2"
+                  src="assets/icons/kotlin.png"
                 />
                 <div class="font-medium text-white">Kotlin</div>
               </div>
 
               <!-- Java -->
               <div
-                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition"
+                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition fade-in-up"
               >
                 <img
-                  src="assets/icons/java.png"
                   alt="Java"
                   class="w-8 h-8 mx-auto mb-2"
+                  src="assets/icons/java.png"
                 />
                 <div class="font-medium text-white">Java</div>
               </div>
 
               <!-- Flutter -->
               <div
-                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition"
+                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition fade-in-up"
               >
                 <img
-                  src="assets/icons/flutter.png"
                   alt="Xml"
                   class="w-8 h-8 mx-auto mb-2"
+                  src="assets/icons/flutter.png"
                 />
                 <div class="font-medium text-white">Flutter</div>
               </div>
 
               <!-- PHP -->
               <div
-                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition"
+                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition fade-in-up"
               >
                 <img
-                  src="assets/icons/php.png"
                   alt="PHP"
                   class="w-8 h-8 mx-auto mb-2"
+                  src="assets/icons/php.png"
                 />
                 <div class="font-medium text-white">PHP</div>
               </div>
 
               <!-- XML -->
               <div
-                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition"
+                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition fade-in-up"
               >
                 <img
-                  src="assets/icons/xml.png"
                   alt="Xml"
                   class="w-8 h-8 mx-auto mb-2"
+                  src="assets/icons/xml.png"
                 />
                 <div class="font-medium text-white">XML</div>
               </div>
 
               <!-- HTML -->
               <div
-                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition"
+                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition fade-in-up"
               >
                 <img
-                  src="assets/icons/html_logo.png"
                   alt="Xml"
                   class="w-8 h-8 mx-auto mb-2"
+                  src="assets/icons/html_logo.png"
                 />
                 <div class="font-medium text-white">HTML</div>
               </div>
@@ -473,11 +546,11 @@
           </div>
 
           <!-- Tools -->
-          <div>
+          <div class="fade-in-up">
             <h3 class="text-2xl font-semibold mb-8 text-white">Tools</h3>
             <div class="grid grid-cols-2 gap-4">
               <div
-                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition"
+                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition fade-in-up"
               >
                 <img
                   src="assets/icons/git_logo.png"
@@ -486,47 +559,43 @@
                 />
                 <div class="font-medium text-white">Git</div>
               </div>
-
               <div
-                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition"
+                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition fade-in-up"
               >
                 <img
-                  src="assets/icons/figma_logo.png"
-                  alt="REST API"
+                  alt="Figma"
                   class="w-8 h-8 mx-auto mb-2"
+                  src="assets/icons/figma_logo.png"
                 />
                 <div class="font-medium text-white">Figma</div>
               </div>
-
               <div
-                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition"
+                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition fade-in-up"
               >
                 <img
-                  src="assets/icons/mysql.png"
                   alt="MySQL"
                   class="w-8 h-8 mx-auto mb-2"
+                  src="assets/icons/mysql.png"
                 />
                 <div class="font-medium text-white">MySQL</div>
               </div>
-
               <div
-                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition"
+                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition fade-in-up"
               >
                 <img
-                  src="assets/icons/postman.png"
                   alt="Postman"
                   class="w-8 h-8 mx-auto mb-2"
+                  src="assets/icons/postman.png"
                 />
                 <div class="font-medium text-white">Postman</div>
               </div>
-
               <div
-                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition"
+                class="bg-[#1a1a1a] p-4 rounded-lg text-center hover:scale-105 transition fade-in-up"
               >
                 <img
-                  src="assets/icons/android_studio.png"
                   alt="Xcode"
                   class="w-8 h-8 mx-auto mb-2"
+                  src="assets/icons/android_studio.png"
                 />
                 <div class="font-medium text-white">Android Studio</div>
               </div>
@@ -537,7 +606,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 gradient-bg">
+    <section class="py-20 gradient-bg" id="contact">
       <div class="max-w-4xl mx-auto px-4">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-white mb-4">
@@ -557,7 +626,7 @@
                 <div
                   class="w-12 h-12 bg-[#111111] bg-opacity-20 rounded-full flex items-center justify-center mr-4"
                 >
-                  <span class="text-xl">📧</span>
+                  <span class="text-xl"> 📧 </span>
                 </div>
                 <div>
                   <div class="font-medium">Email</div>
@@ -568,7 +637,7 @@
                 <div
                   class="w-12 h-12 bg-[#111111] bg-opacity-20 rounded-full flex items-center justify-center mr-4"
                 >
-                  <span class="text-xl">📱</span>
+                  <span class="text-xl"> 📱 </span>
                 </div>
                 <div>
                   <div class="font-medium">Phone</div>
@@ -579,7 +648,7 @@
                 <div
                   class="w-12 h-12 bg-[#111111] bg-opacity-20 rounded-full flex items-center justify-center mr-4"
                 >
-                  <span class="text-xl">📍</span>
+                  <span class="text-xl"> 📍 </span>
                 </div>
                 <div>
                   <div class="font-medium">Location</div>
@@ -592,37 +661,37 @@
               <div class="flex space-x-4">
                 <!-- GitHub -->
                 <a
-                  href="https://github.com/pateeeh"
                   class="w-10 h-10 bg-[#111111] bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300"
+                  href="https://github.com/pateeeh"
                 >
                   <img
-                    src="assets/icons/github_logo.jpeg"
                     alt="Github Profile"
                     class="w-6 h-6 rounded-full object-cover"
+                    src="assets/icons/github_logo.jpeg"
                   />
                 </a>
 
                 <!-- LinkedIn -->
                 <a
-                  href="http://linkedin.com/in/muhammadfatihazzam/"
                   class="w-10 h-10 bg-[#111111] bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300"
+                  href="http://linkedin.com/in/muhammadfatihazzam/"
                 >
                   <img
-                    src="assets/icons/linkedin_logo.jpeg"
                     alt="LinkedIn Profile"
                     class="w-6 h-6 rounded-full object-cover"
+                    src="assets/icons/linkedin_logo.jpeg"
                   />
                 </a>
 
                 <!-- WhatsApp -->
                 <a
-                  href="https://wa.me/62895327619259"
                   class="w-10 h-10 bg-[#111111] bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300"
+                  href="https://wa.me/62895327619259"
                 >
                   <img
-                    src="assets/icons/whatsapp_logo.jpeg"
                     alt="WhatsApp"
                     class="w-6 h-6 rounded-full object-cover"
+                    src="assets/icons/whatsapp_logo.jpeg"
                   />
                 </a>
               </div>
@@ -633,59 +702,55 @@
           >
             <form
               action="https://formsubmit.co/fatihazzam33@gmail.com"
-              method="POST"
               class="space-y-6"
+              method="POST"
             >
               <!-- Anti spam dan redirect -->
-              <input type="hidden" name="_captcha" value="false" />
+              <input name="_captcha" type="hidden" value="false" />
               <input
-                type="hidden"
                 name="_next"
+                type="hidden"
                 value="https://portofoliofatih.netlify.app/thanks.html"
               />
-
               <div class="mb-6">
-                <label class="block text-white text-sm font-medium mb-2"
-                  >Name</label
-                >
+                <label class="block text-white text-sm font-medium mb-2">
+                  Name
+                </label>
                 <input
-                  type="text"
+                  class="w-full px-4 py-3 bg-[#111111] bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-opacity-50"
                   name="name"
-                  class="w-full px-4 py-3 bg-[#111111] bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-opacity-50"
                   placeholder="Your Name"
-                  required
+                  required=""
+                  type="text"
                 />
               </div>
-
               <div class="mb-6">
-                <label class="block text-white text-sm font-medium mb-2"
-                  >Email</label
-                >
+                <label class="block text-white text-sm font-medium mb-2">
+                  Email
+                </label>
                 <input
-                  type="email"
-                  name="email"
                   class="w-full px-4 py-3 bg-[#111111] bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-opacity-50"
+                  name="email"
                   placeholder="your@email.com"
-                  required
+                  required=""
+                  type="email"
                 />
               </div>
-
               <div class="mb-6">
-                <label class="block text-white text-sm font-medium mb-2"
-                  >Message</label
-                >
+                <label class="block text-white text-sm font-medium mb-2">
+                  Message
+                </label>
                 <textarea
-                  name="message"
-                  rows="4"
                   class="w-full px-4 py-3 bg-[#111111] bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-opacity-50"
+                  name="message"
                   placeholder="Tell me about your project..."
-                  required
+                  required=""
+                  rows="4"
                 ></textarea>
               </div>
-
               <button
-                type="submit"
                 class="w-full bg-[#111111] text-blue-600 py-3 px-6 rounded-lg font-semibold hover:bg-gray-100 transition duration-300"
+                type="submit"
               >
                 Send Message
               </button>
@@ -698,7 +763,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
       <div class="max-w-6xl mx-auto px-4 text-center">
-        <p>&copy; 2023 Fatih Azzam. All rights reserved.</p>
+        <p>&copy; 2025 Fatih Azzam. All rights reserved.</p>
         <p class="text-gray-400 mt-2">Built with love</p>
       </div>
     </footer>
@@ -709,7 +774,17 @@
         .getElementById("mobile-menu-btn")
         .addEventListener("click", function () {
           const mobileMenu = document.getElementById("mobile-menu");
+          const hamburgerIcon = document.getElementById("hamburger-path");
+
           mobileMenu.classList.toggle("hidden");
+
+          // Toggle icon between hamburger and X
+          const isOpen = !mobileMenu.classList.contains("hidden");
+
+          hamburgerIcon.setAttribute(
+            "d",
+            isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
+          );
         });
 
       // Smooth scrolling for navigation links
@@ -809,5 +884,106 @@
         }
       })();
     </script>
+
+    <!-- Particles Background -->
+    <div class="absolute top-0 left-0 w-full h-full z-0" id="tsparticles"></div>
+    <script>
+      tsParticles.load("tsparticles", {
+        fullScreen: { enable: false },
+        particles: {
+          number: { value: 25 },
+          color: { value: "#ffffff" },
+          shape: { type: "circle" },
+          opacity: { value: 0.2 },
+          size: { value: 3 },
+          move: {
+            enable: true,
+            speed: 0.3,
+            direction: "none",
+            straight: false,
+            outModes: { default: "bounce" },
+          },
+        },
+        interactivity: {
+          events: { onhover: { enable: true, mode: "repulse" } },
+          modes: { repulse: { distance: 100 } },
+        },
+        background: { color: "transparent" },
+      });
+    </script>
+
+    <!-- Scroll Reveal Animation -->
+    <script>
+      const revealItems = document.querySelectorAll(".fade-in-up");
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      revealItems.forEach((item) => revealObserver.observe(item));
+    </script>
+
+    <script>
+      const phrases = [
+        "Junior Mobile Developer",
+        "UI/UX Designer",
+        "Mahasiswa / Student",
+      ];
+
+      const typedText = document.getElementById("typed-text");
+      const cursor = document.querySelector(".blinking-cursor");
+
+      let phraseIndex = 0;
+      let letterIndex = 0;
+      let isDeleting = false;
+
+      function typeLoop() {
+        const currentPhrase = phrases[phraseIndex];
+        const currentText = currentPhrase.substring(0, letterIndex);
+
+        typedText.textContent = currentText;
+
+        if (!isDeleting && letterIndex < currentPhrase.length) {
+          letterIndex++;
+          setTimeout(typeLoop, 100);
+        } else if (isDeleting && letterIndex > 0) {
+          letterIndex--;
+          setTimeout(typeLoop, 50);
+        } else {
+          isDeleting = !isDeleting;
+          if (!isDeleting) phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(typeLoop, 1000);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        typeLoop();
+      });
+    </script>
+
+    <style>
+      .blinking-cursor {
+        font-weight: bold;
+        font-size: 20px;
+        color: #ffffff;
+        animation: blink 0.7s infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
   </body>
 </html>
